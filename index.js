@@ -17,6 +17,10 @@ app.init = function() {
   server.init();
   // Start the workers
   workers.init();
+  // start the CLI, but make sure it starts last
+  setTimeout(function() {
+    cli.init();
+  }, 50);
 };
 
 // Execute the init Function
